@@ -1,0 +1,56 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Nodejs Challenge Documentation",
+    "description": "This is an API nodejs",
+    "version": "1.0.0",
+    "contact": {
+      "email": "viniciusspmelo@gmail.com"
+    }
+  },
+  "paths": {
+    "/numbers/getNumberInformation/{number}": {
+      "get": {
+        "tags": ["Numbers"],
+        "summary": "Get number information",
+        "description": "Get number information",
+        "parameters": [
+          {
+            "name": "number",
+            "in": "path",
+            "type": "number",
+            "description": "The number you want to get the information from"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dividerNumbers": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "example": [1,3,5,9,15,45]
+                      }
+                    },
+                    "primesNumber": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "example": [1,3,5]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }        
+      }
+    }
+  }
+}
